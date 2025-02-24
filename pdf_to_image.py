@@ -1,3 +1,4 @@
+import argparse
 import fitz
 
 def pdf_to_image(pdf_path, output_path):
@@ -24,9 +25,11 @@ def pdf_to_image(pdf_path, output_path):
         print(f"PDF 已成功转换为图片，保存路径为: {output_path}")
     except Exception as e:
         print(f"转换过程中出现错误: {e}")
-
+    pass
 
 if __name__ == "__main__":
-    pdf_path = "input.pdf"
-    output_path = "output.png"
-    pdf_to_image(pdf_path, output_path)
+    parser = argparse.ArgumentParser(description="将单页 PDF 转换为图片")
+    parser.add_argument("pdf_path", help="输入的 PDF 文件路径")
+    parser.add_argument("output_path", help="输出的图片文件路径")
+    args = parser.parse_args()
+    pdf_to_image(args.pdf_path, args.output_path)
