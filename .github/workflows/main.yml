@@ -1,3 +1,8 @@
+import io
+from PyPDF2 import PdfReader
+from PIL import Image, ImageDraw, ImageFont
+
+
 def pdf_to_image(pdf_path):
     with open(pdf_path, 'rb') as pdf_file:
         pdf_reader = PdfReader(pdf_file)
@@ -23,4 +28,3 @@ if __name__ == "__main__":
     img = pdf_to_image(pdf_path)
     if img:
         img.save("output.jpg", "JPEG")
-
