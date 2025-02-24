@@ -1,7 +1,8 @@
-import argparse
+mport argparse
 import fitz
 
 def pdf_to_image(pdf_path, output_path):
+
     """
     将单页 PDF 转换为图片
     :param pdf_path: PDF 文件的路径
